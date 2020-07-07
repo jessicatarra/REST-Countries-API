@@ -3,8 +3,10 @@ import styled from "styled-components";
 
 const CountryStyled = styled.div`
   width: 264px;
-  border: 1px solid red;
   text-align: left;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 0 7px 2px rgba(0, 0, 0, 0.03);
   img {
     width: 100%;
     height: 160px;
@@ -16,6 +18,7 @@ const CountryStyled = styled.div`
     margin: 0;
     margin-bottom: 1rem;
     font-size: 18px;
+    font-weight: 700;
   }
   p {
     font-size: 0.9em;
@@ -26,7 +29,7 @@ const CountryStyled = styled.div`
 export default function country({ flag, name, population, region, capital }) {
   return (
     <CountryStyled>
-      <img src={flag} alt="" />
+      <img loading="lazy" src={flag} alt="" />
       <div className="details">
         <h2>{name}</h2>
         <p>

@@ -1,19 +1,35 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
-import Country from "./country";
+import CountryList from "./country-list";
+import { Provider } from "react-redux";
+import { createStore } from "redux";
 
+const initialState = {
+  countryList: [],
+};
+
+function reducer(state, action) {
+  console.log(action);
+  switch (action.type) {
+    case "SET_COUNTRY_LIST": {
+      console.log("voy a actualizar");
+      return { ...state, countryList: action.payload };
+    }
+    default: {
+      return state;
+    }
+  }
+  return state;
+}
+
+const store = createStore(reducer, initialState);
 function App() {
   return (
-    <div className="App">
-      <Country
-        flag="https://upload.wikimedia.org/wikipedia/commons/f/f8/Flag_of_Colombia.png"
-        name="Colombia"
-        population={50000000}
-        region="America"
-        capital="Bogota"
-      />
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        <CountryList />
+      </div>
+    </Provider>
   );
 }
 
