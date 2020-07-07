@@ -20,6 +20,7 @@ function reducer(state, action) {
       console.log("voy a actualizar");
       return { ...state, countryList: action.payload };
     }
+
     case "SET_COUNTRY_BY_NAME": {
       const countryListByName = (state.countryList || []).filter((country) =>
         country.name.toLowerCase().includes(action.payload.toLowerCase())
