@@ -3,20 +3,20 @@ import styled from "styled-components";
 import Country from "./country";
 import { useSelector, useDispatch } from "react-redux";
 
+
 const CountryListStyled = styled.div`
   display: grid;
   grid-row-gap: 2.3em;
   background: var(--background);
   justify-content: center;
-  border: 1px solid red;
   padding: 4em 2em;
 `;
 function CountryList() {
-  const [inputValue, setInputValue] = useState("");
-  const dispatch = useDispatch();
+
+  const dispatch = useDispatch()
   const countryListByName = useSelector((state) => state.countryListByName);
   const countryList = useSelector((state) => {
-    if ("" !== state.filterByRegion) {
+    if (state.filterByRegion !== "" && countryListByName.length === 0) {
       return state.countryFilteredByRegion;
     }
     if (countryListByName.length > 0) {
@@ -43,34 +43,10 @@ function CountryList() {
       });
   }, [dispatch]);
 
-  const filterByName = (e) => {
-    setInputValue(e.target.value);
-    dispatch({
-      type: "SET_COUNTRY_BY_NAME",
-      payload: e.target.value,
-    });
-  };
-  const clearInput = () => {
-    dispatch({
-      type: "SET_COUNTRY_BY_NAME",
-      payload: "",
-    });
-    setInputValue("");
-  };
+
   return (
     <CountryListStyled>
-      <input
-        placeholder="Search for a country"
-        type="text"
-        value={inputValue}
-        onChange={filterByName}
-      />
-      {inputValue && <button onClick={clearInput}>X</button>}
-      {countryListByName.length === 0 && inputValue && (
-        <p>
-          <strong>{inputValue}</strong> Not found in countries
-        </p>
-      )}
+
       {countryList.map(({ name, flag, population, capital, region }) => {
         return (
           <Country
