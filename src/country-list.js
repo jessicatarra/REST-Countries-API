@@ -12,7 +12,7 @@ const CountryListStyled = styled.div`
   grid-template-columns: repeat(auto-fill, 270px);
   background: var(--background);
   justify-content: center;
-  padding: 4em 0;
+  padding: 3em 0;
 `;
 function CountryList() {
 

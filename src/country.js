@@ -7,7 +7,6 @@ const CountryStyled = styled.div`
   cursor: pointer;
   text-align: left;
   border-radius: 5px;
-  overflow: hidden;
   box-shadow: 0 0 7px 2px rgba(0, 0, 0, 0.03);
   &:hover .details{
     border: 1px solid var(--black);

@@ -3,7 +3,6 @@ import "./App.css";
 import CountryList from "./country-list";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
-import { Region } from "./Region";
 import reducer from './reducer'
 import ActionList from './action-list'
 import Header from './header'
