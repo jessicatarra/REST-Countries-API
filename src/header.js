@@ -43,9 +43,9 @@ const HeaderStyled = styled.div`
     }
 `
 
-function Header() {
-    function handleClick(){
-
+function Header({ setDarkMode, darkMode }) {
+    function handleClick() {
+        setDarkMode(!darkMode)
     }
     return (
         <HeaderStyled>
@@ -60,7 +60,11 @@ function Header() {
                     <div className="dark-mode">
                         <p onClick={handleClick}>
                             <span className="moon">
-                                <i class="far fa-moon"></i>                                 
+                                {
+                                    darkMode ? 
+                                    <i class="fas fa-moon"></i> :
+                                    <i class="far fa-moon"></i>
+                                }                                
                             </span>
                             Dark Mode     
                         </p>             

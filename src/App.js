@@ -43,7 +43,7 @@ const store = createStore(reducer, initialState);
     <main className={mainClass}>
       <Provider store={store}>    
         <Router>
-          <Header />
+          <Header setDarkMode={setDarkMode} darkMode={darkMode} />
           <Switch>
             <Route path="/country/:id" component={CountryPage} />
             <Route path="/">

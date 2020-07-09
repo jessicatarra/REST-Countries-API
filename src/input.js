@@ -21,6 +21,7 @@ const InputStyled = styled.label`
     font-size: 0.7em;
     outline:0;
     background: var(--white);
+    color: var(--black);
     &::-webkit-input-placeholder {
       color: #c4c4c4;
     }
