@@ -14,7 +14,6 @@ body {
 main {
   background: var(--background);
   color: var(--black);
-  height: 100vh;
 }
 
 .is-dark-mode {
