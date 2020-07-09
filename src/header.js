@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Wrapper from './wrapper'
+import { Link } from 'react-router-dom'
 
 const HeaderStyled = styled.div`
     background: var(--white);
@@ -15,6 +16,10 @@ const HeaderStyled = styled.div`
     h1{
         font-size: 14px;
     }
+    a {
+        text-decoration: none;
+        color: var(--black);
+    }
     .dark-mode {
         cursor: pointer;
         .moon {
@@ -27,6 +32,15 @@ const HeaderStyled = styled.div`
             font-weight: 600;
         }
     }
+    @media screen and (min-width: 768px) {
+        margin-bottom: 3em;
+        h1{
+            font-size: 24px;
+        }
+        p {
+            font-size: 1rem;
+        }
+    }
 `
 
 function Header() {
@@ -37,9 +51,12 @@ function Header() {
         <HeaderStyled>
             <Wrapper>
                 <div className="content">
-                    <h1>
-                        Where in the world?   
-                    </h1>
+                    <Link to="/">
+                        <h1>
+                            Where in the world?   
+                        </h1>                    
+                    </Link>
+
                     <div className="dark-mode">
                         <p onClick={handleClick}>
                             <span className="moon">
