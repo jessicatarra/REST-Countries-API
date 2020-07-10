@@ -22,7 +22,7 @@ const CountryPageStyled = styled.div`
         margin-top: 3em;
         }
     }
-`
+`;
 
 function CountryPage({ match, history }) {
     let DBcountry = useSelector(state => state.countryList.find(item => item.alpha2Code === match.params.id))
@@ -38,7 +38,7 @@ function CountryPage({ match, history }) {
             })
         }
         
-    }, [country, match.params.id])
+    }, [country, match.params.id]);
 
     function handleClick() {
         history.goBack()
@@ -48,7 +48,6 @@ function CountryPage({ match, history }) {
             <Wrapper>
                 <button className="back" onClick={handleClick}><i class="fas fa-long-arrow-alt-left"></i>Back</button>
                 <CountrySelected {...country}/>
-                {match.params.id}   
             </Wrapper>
         </CountryPageStyled>
     )

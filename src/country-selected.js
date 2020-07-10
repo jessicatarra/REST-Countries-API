@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const CountrySelectedStyled = styled.div`
     margin-top: 3em;
     padding-bottom: 3em;
-    .img {
+    img {
         width: 100%;
         margin-bottom: 2em;
     }
@@ -61,6 +61,7 @@ function CountrySelected({
     currencies = [],
     languages = [],
     borders = [],
+    
 }) 
     
     {

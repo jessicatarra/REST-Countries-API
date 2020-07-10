@@ -15,7 +15,7 @@ const initialState = {
   countryList: [],
   countryListByName: [],
   countryFilteredByRegion: [],
-  filterByRegion: "",
+  filterByRegion: '',
 };
 
 const store = createStore(reducer, initialState);
